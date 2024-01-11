@@ -6,7 +6,7 @@ on:
     branches:
       - master
 
-name: test
+name: test-rstuff
 jobs:
   r-stuff:
     runs-on: ubuntu-latest
