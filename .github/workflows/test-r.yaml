@@ -1,0 +1,23 @@
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+name: test
+jobs:
+  test_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install R
+        run: sudo apt-get update && sudo apt-get install -y r-base
+      - name: Install microbenchmark
+        run: sudo Rscript -e "install.packages('microbenchmark')"
+      - name: Run the script
+        run: sudo Rscript rstuff/script.R
