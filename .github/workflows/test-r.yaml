@@ -17,6 +17,7 @@ jobs:
       - name: Install R
         run: sudo apt-get update && sudo apt-get install -y r-base
       - name: Install microbenchmark
-        run: sudo Rscript -e "install.packages('microbenchmark')"
+        working-directory: ./rstuff
+        run: sudo Rscript -e "renv::restore()"
       - name: Run the script
         run: sudo Rscript rstuff/script.R
