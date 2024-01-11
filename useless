@@ -1,0 +1,17 @@
+#!/bin/bash
+
+COMMAND=$1
+
+if [ "$COMMAND" = "r" ]
+then
+    Rscript rstuff/script.R
+elif [ "$COMMAND" = "node" ]
+then
+    node nodestuff/test.js
+elif [ "$COMMAND" = "setup" ]
+then
+    cd rstuff
+    Rscript -e "renv::restore()"
+    cd ../nodestuff
+    npm install
+fi
