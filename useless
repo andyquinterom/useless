@@ -4,7 +4,7 @@ COMMAND=$1
 
 if [ "$COMMAND" = "r" ]
 then
-    Rscript rstuff/script.R
+    cd rstuff && Rscript script.R
 elif [ "$COMMAND" = "node" ]
 then
     node nodestuff/test.js

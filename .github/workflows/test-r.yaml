@@ -20,4 +20,5 @@ jobs:
         working-directory: ./rstuff
         run: sudo Rscript -e "renv::restore()"
       - name: Run the script
-        run: sudo Rscript rstuff/script.R
+        working-directory: ./rstuff
+        run: sudo Rscript script.R
