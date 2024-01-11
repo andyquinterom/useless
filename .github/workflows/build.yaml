@@ -51,7 +51,7 @@ jobs:
         working-directory: ./website
         run: mkdocs build --strict
   deploy-website:
-    needs: test-website-build
+    needs: [test-website-build, test-r-stuff, test-node-stuff]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
